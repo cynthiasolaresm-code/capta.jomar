@@ -175,13 +175,16 @@ input[type=file]{display:none;}
   width:240px;max-height:320px;overflow:auto;padding:10px;
 }
 .filter-panel.show{display:block;}
+.portal-filter-panel{position:fixed;top:auto;left:auto;z-index:180;}
 .filter-panel input.search{
   width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:8px;font-size:12.5px;margin-bottom:8px;
 }
+.filter-options-list{min-width:0;}
 .filter-opt{display:flex;align-items:center;gap:8px;padding:5px 4px;font-size:13px;border-radius:6px;cursor:pointer;}
 .filter-opt:hover{background:var(--chip);}
 .filter-opt input{margin:0;}
 .filter-panel .fp-actions{display:flex;justify-content:space-between;margin-top:6px;padding-top:6px;border-top:1px solid var(--line);}
+.filter-panel.actions-first .fp-actions{margin:0 0 8px;padding:0 0 8px;border-top:0;border-bottom:1px solid var(--line);}
 .fp-actions a{font-size:11.5px;color:var(--blue);cursor:pointer;font-weight:600;}
 .clear-filters{margin-left:auto;font-size:12.5px;color:var(--ink-soft);cursor:pointer;font-weight:700;align-self:center;}
 .clear-filters:hover{color:var(--red);}
@@ -257,6 +260,10 @@ th .col-filter-slot .filter-btn{
 }
 th .col-filter-slot .filter-panel{width:200px;}
 #peia-detail-table thead th{white-space:normal;vertical-align:top;}
+.detail-filter-panel{width:270px!important;max-height:none!important;overflow:hidden!important;padding:11px!important;}
+.detail-filter-panel .filter-options-list{height:217px;overflow-y:auto;scrollbar-gutter:stable;padding-right:4px;}
+.detail-filter-panel .filter-opt{min-height:31px;padding:5px 4px;font-size:12.5px;font-weight:600;line-height:1.25;}
+.detail-filter-panel input.search{height:34px;margin-bottom:8px;}
 th input.col-filter{
   display:block;width:100%;margin-top:5px;box-sizing:border-box;
   font-weight:500;text-transform:none;letter-spacing:0;color:var(--ink);
@@ -270,6 +277,22 @@ th input.col-filter:focus{outline:none;border-color:var(--blue);}
 .table-card .thead h4{margin:0;font-size:13.5px;font-weight:800;}
 .table-card .thead span{font-size:12px;color:var(--ink-soft);}
 .table-scroll{max-height:420px;overflow:auto;}
+.peia-detail-scroll{height:335px;max-height:335px;min-height:335px;}
+#peia-detail-table{table-layout:fixed;width:2620px;min-width:2620px;max-width:2620px;}
+#peia-detail-table col.peia-col-direccion{width:320px;}
+#peia-detail-table col.peia-col-zona{width:170px;}
+#peia-detail-table col.peia-col-dep{width:260px;}
+#peia-detail-table col.peia-col-empleado{width:140px;}
+#peia-detail-table col.peia-col-nombre{width:380px;}
+#peia-detail-table col.peia-col-puesto{width:260px;}
+#peia-detail-table col.peia-col-gerente{width:290px;}
+#peia-detail-table col.peia-col-hrbp{width:290px;}
+#peia-detail-table col.peia-col-estatus{width:150px;}
+#peia-detail-table col.peia-col-avance{width:120px;}
+#peia-detail-table col.peia-col-usuario{width:240px;}
+#peia-detail-table th,#peia-detail-table td{box-sizing:border-box;overflow:hidden;}
+#peia-detail-table td{text-overflow:ellipsis;}
+#peia-detail-table tbody tr:not(.table-empty-row){height:36px;}
 table{width:100%;border-collapse:collapse;font-size:12.8px;}
 thead th{
   position:sticky;top:0;background:#F7F8FB;text-align:left;padding:9px 14px;font-weight:700;
@@ -394,6 +417,15 @@ section{padding-top:32px;}
 .section-mark.conf-mark{background:#FCECEF;color:var(--red);}
 .dash-header h2{font-size:24px;color:var(--ink);}
 .dash-header .sub{font-size:12.5px;line-height:1.55;}
+.peia-campus-banner{display:flex;align-items:center;gap:16px;margin:0 0 16px;padding:11px 14px;border:1px solid #D8B565;border-left:7px solid #D8B565;border-radius:14px;background:#fff;box-shadow:0 5px 18px rgba(23,50,77,.055);}
+.peia-campus-badge{display:flex;align-items:center;gap:7px;flex:0 0 auto;min-width:158px;padding:8px 11px;background:linear-gradient(135deg,#D8B565,#E8C878);color:#fff;border-radius:9px;}
+.peia-campus-badge strong{font-size:29px;line-height:1;font-weight:900;letter-spacing:-.04em;}
+.peia-campus-badge span{max-width:72px;font-size:6.5px;line-height:1.02;font-weight:900;text-transform:uppercase;}
+.peia-campus-copy{display:flex;flex-direction:column;gap:4px;min-width:0;color:var(--ink);}
+.peia-campus-copy strong{font-size:13px;}
+.peia-campus-copy span{color:var(--ink-soft);font-size:11.5px;line-height:1.4;}
+.peia-campus-link{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;margin-left:auto;min-height:40px;padding:0 17px;border-radius:10px;background:#CFA43E;color:#fff;text-decoration:none;font-size:11.5px;font-weight:800;white-space:nowrap;box-shadow:0 4px 10px rgba(165,120,22,.2);}
+.peia-campus-link:hover{background:#B78B2D;color:#fff;}
 .upload-box{border:1px solid #C9D9E8;background:#F8FBFE;border-radius:14px;padding:15px 18px;box-shadow:none;}
 .upload-box::before{content:"ADMIN";font-size:9px;letter-spacing:.11em;font-weight:800;color:var(--blue);background:var(--blue-soft);padding:5px 7px;border-radius:6px;}
 .btn{background:var(--blue);border-radius:9px;font-family:inherit;font-size:12px;padding:10px 15px;box-shadow:0 3px 8px rgba(11,93,167,.18);}
@@ -402,6 +434,16 @@ section{padding-top:32px;}
 .empty-state{border-style:dashed;border-width:1.5px;padding:52px 24px;background:rgba(255,255,255,.72);}
 .empty-state .icon{width:46px;height:46px;border-radius:14px;margin:0 auto 12px;display:grid;place-items:center;background:var(--blue-soft);font-size:22px;}
 .filters-bar{position:sticky;top:150px;z-index:45;box-shadow:0 8px 24px rgba(23,50,77,.07);border-color:#D4DFE9;}
+#peia-filters{padding:10px 11px;gap:8px;align-items:stretch;flex-direction:column;flex-wrap:nowrap;overflow:visible;}
+.peia-filter-role-row{display:flex;align-items:center;width:100%;}
+.peia-filter-controls-row{display:flex;align-items:center;gap:5px;width:100%;flex-wrap:nowrap;}
+#peia-filters .role-toggle{flex:0 0 auto;gap:2px;padding:3px;}
+#peia-filters .role-toggle-lbl{font-size:8.5px;padding:0 4px;}
+#peia-filters .role-toggle button{font-size:10.5px;padding:6px 8px;}
+#peia-filters .filter-field{flex:0 0 auto;}
+#peia-filters .filter-btn{padding:7px 7px;gap:3px;font-size:10.5px;}
+#peia-filters .filter-btn .lbl{font-size:8.5px;letter-spacing:.035em;}
+#peia-filters .clear-filters{flex:0 0 auto;margin-left:auto;padding:0 3px;font-size:10.5px;white-space:nowrap;}
 .filter-btn{background:#F6F8FB;}
 .kpi-card,.chart-card,.table-card{box-shadow:0 5px 18px rgba(23,50,77,.045);border-color:#DCE5ED;}
 .kpi-card{position:relative;overflow:hidden;}
@@ -522,11 +564,11 @@ footer{display:flex;align-items:center;justify-content:center;gap:14px;padding:3
 .access-card{width:min(100%,520px);padding:36px 42px 40px;border-radius:25px;background:#fff;box-shadow:0 28px 75px rgba(0,0,0,.28);}
 .access-brand{text-align:center;margin-bottom:24px;}
 .access-brand img{display:block;width:235px;height:92px;margin:0 auto 12px;object-fit:contain;}
-.access-brand h1{margin:0;color:var(--navy);font-size:26px;letter-spacing:-.02em;}
+.access-brand h1{margin:0;color:var(--ink);font-size:26px;letter-spacing:-.02em;}
 .access-brand p{margin:7px 0 0;color:#66758A;font-size:14px;}
 .access-tabs{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin:0 0 25px;padding:5px;border-radius:13px;background:#F0F3F7;}
 .access-tabs button{min-height:56px;border:0;border-radius:10px;background:transparent;color:#53647C;font:700 12px/1.25 "Montserrat",sans-serif;cursor:pointer;}
-.access-tabs button.active{background:#fff;color:var(--navy);box-shadow:0 4px 12px rgba(23,50,77,.14);}
+.access-tabs button.active{background:#fff;color:var(--ink);box-shadow:0 4px 12px rgba(23,50,77,.14);}
 .access-panel{display:none;}
 .access-panel.active{display:block;}
 .access-field{display:block;margin:0 0 16px;}
@@ -534,8 +576,10 @@ footer{display:flex;align-items:center;justify-content:center;gap:14px;padding:3
 .access-field input{width:100%;height:48px;border:1px solid #D7E0EA;border-radius:10px;padding:0 14px;color:var(--ink);background:#fff;font:500 14px/1 "Montserrat",sans-serif;outline:none;}
 .access-field input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(11,93,167,.12);}
 .access-description{margin:0 0 24px;color:#52647B;font-size:13px;line-height:1.75;}
-.access-submit{width:100%;min-height:50px;border:0;border-radius:11px;background:var(--navy);color:#fff;font:700 13px/1 "Montserrat",sans-serif;cursor:pointer;}
+.access-submit{width:100%;min-height:50px;border:0;border-radius:11px;background:#084A82;color:#fff;font:700 13px/1 "Montserrat",sans-serif;cursor:pointer;}
 .access-submit:hover{background:var(--blue-deep);}
+#public-access-panel.active{padding-bottom:66px;}
+#public-access-panel.active #public-access-button{position:fixed;z-index:260;box-shadow:0 10px 26px rgba(7,63,118,.28);}
 .access-error{min-height:19px;margin:-5px 0 9px;color:#C71F37;font-size:11px;font-weight:700;}
 .logout-access{border:1px solid #C6D5E2;background:#fff;color:var(--blue-deep);border-radius:8px;padding:9px 12px;font:700 10px/1 "Montserrat",sans-serif;cursor:pointer;}
 .logout-access:hover{border-color:var(--blue);background:var(--blue-soft);}
@@ -568,6 +612,7 @@ body.public-mode #summary-talent,body.public-mode #summary-conf{display:none!imp
   .nav-inner{padding:0 18px;}.view-status{display:none;}.wrap{padding-left:18px;padding-right:18px;}
   .hero{grid-template-columns:1fr;padding:34px 28px;}.hero-side{display:none;}
   .filters-bar{top:140px;}
+  .peia-filter-controls-row{flex-wrap:wrap;}
   .direction-progress-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
   #summary-peia .summary-chart-wrap{min-width:100%;}
   .history-head{flex-direction:column}.history-role-filter{width:100%}.history-main-grid{grid-template-columns:1fr}.history-kpis{grid-template-columns:1fr 1fr}.history-kpi.delta{grid-column:1/-1}
@@ -579,6 +624,7 @@ body.public-mode #summary-talent,body.public-mode #summary-conf{display:none!imp
   .hero{min-height:auto;padding:28px 22px;border-radius:17px}.hero h1{font-size:29px}.hero p{font-size:12.5px}
   .dash-heading{align-items:flex-start}.section-mark{width:44px;height:44px;flex:0 0 auto}.section-mark.peia-mark{width:110px}
   .dash-header h2{font-size:19px}.filters-bar{top:127px;}.upload-box::before{display:none;}
+  .peia-campus-banner{align-items:stretch;flex-wrap:wrap}.peia-campus-badge{min-width:145px}.peia-campus-copy{flex:1 1 180px}.peia-campus-link{width:100%;margin-left:0}
   .peia-view-tabs{width:100%;overflow-x:auto}.peia-view-tabs button{flex:1;padding:10px 12px;font-size:10.5px}
   .direction-view-heading{align-items:flex-start;flex-direction:column}.direction-progress-grid{grid-template-columns:1fr}
   .direction-progress-card{min-height:220px}.direction-card-value{font-size:44px}
@@ -734,6 +780,14 @@ body.public-mode #summary-talent,body.public-mode #summary-conf{display:none!imp
         </div>
       </div>
     </div>
+    <div class="peia-campus-banner" aria-label="Acceso al Campus PEIA">
+      <div class="peia-campus-badge"><strong>PEIA</strong><span>Programa Económico Integral Avanzado</span></div>
+      <div class="peia-campus-copy">
+        <strong>Da clic aquí para ingresar al PEIA</strong>
+        <span>Continúa tu desarrollo y completa tus cursos en la plataforma institucional.</span>
+      </div>
+      <a class="peia-campus-link" href="https://campus-peia.com/" target="_blank" rel="noopener noreferrer">Entrar al Campus PEIA ↗</a>
+    </div>
     <div class="upload-box admin-only">
       <div class="info" id="peia-upload-info"><b>Ningún archivo cargado.</b> Sube tu Excel para comenzar.</div>
       <div>
@@ -865,6 +919,27 @@ async function sha256Hex(value){
   return [...new Uint8Array(digest)].map(byte=>byte.toString(16).padStart(2,'0')).join('');
 }
 
+function positionPublicAccessButton(){
+  const gate = document.getElementById('access-gate');
+  const panel = document.getElementById('public-access-panel');
+  const button = document.getElementById('public-access-button');
+  const card = document.querySelector('.access-card');
+  if(!gate || !panel || !button || !card || gate.classList.contains('hidden') || !panel.classList.contains('active')){
+    if(button){ button.style.left=''; button.style.bottom=''; button.style.width=''; }
+    return;
+  }
+  requestAnimationFrame(()=>{
+    const rect = card.getBoundingClientRect();
+    const style = getComputedStyle(card);
+    const paddingLeft = parseFloat(style.paddingLeft)||0;
+    const paddingRight = parseFloat(style.paddingRight)||0;
+    const paddingBottom = parseFloat(style.paddingBottom)||0;
+    button.style.left = `${rect.left+paddingLeft}px`;
+    button.style.width = `${Math.max(220,rect.width-paddingLeft-paddingRight)}px`;
+    button.style.bottom = `${Math.max(18,window.innerHeight-rect.bottom+paddingBottom)}px`;
+  });
+}
+
 function selectAccessTab(tab){
   document.querySelectorAll('[data-access-tab]').forEach(btn=>{
     const active = btn.dataset.accessTab === tab;
@@ -876,6 +951,7 @@ function selectAccessTab(tab){
   const error = document.getElementById('access-error');
   if(error) error.textContent = '';
   if(tab === 'admin') setTimeout(()=>document.getElementById('admin-user').focus(),0);
+  positionPublicAccessButton();
 }
 
 function showAccessGate(tab='public'){
@@ -888,6 +964,7 @@ function enterApp(role){
   accessRole = role;
   try{ sessionStorage.setItem('capta_access_role', role); }catch(e){}
   document.getElementById('access-gate').classList.add('hidden');
+  positionPublicAccessButton();
   document.getElementById('app-shell').classList.remove('is-locked');
   setViewMode(role === 'admin' ? 'admin' : 'public', false, true);
   switchTab('home');
@@ -924,6 +1001,7 @@ function setViewMode(mode, persist=true, authorized=false){
 document.querySelectorAll('[data-view]').forEach(btn=>btn.addEventListener('click',()=>setViewMode(btn.dataset.view)));
 document.querySelectorAll('[data-access-tab]').forEach(btn=>btn.addEventListener('click',()=>selectAccessTab(btn.dataset.accessTab)));
 document.getElementById('public-access-button').addEventListener('click',()=>enterApp('public'));
+window.addEventListener('resize',positionPublicAccessButton);
 document.getElementById('logout-access').addEventListener('click',logoutAccess);
 document.getElementById('admin-access-panel').addEventListener('submit',async event=>{
   event.preventDefault();
@@ -961,6 +1039,15 @@ function switchTab(id){
   document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   document.querySelectorAll('nav.tabs button').forEach(b=>b.classList.toggle('active', b.dataset.tab===id));
+  if(id==='home'){
+    peiaSummaryRole = 'Administrativo';
+    peiaHistoryRole = 'Administrativo';
+    setTimeout(()=>{
+      setHomeSummaryView('current');
+      renderHomeSummaries();
+      renderPeiaHistory();
+    },0);
+  }
   window.scrollTo({top:0,behavior:'smooth'});
 }
 document.querySelectorAll('nav.tabs button').forEach(b=>b.addEventListener('click',()=>switchTab(b.dataset.tab)));
@@ -1073,7 +1160,7 @@ function renderSummaryChart(canvasId, entries){
   });
 }
 
-let peiaSummaryRole = 'Ambos';
+var peiaSummaryRole = 'Administrativo';
 
 function isPEIAPendingUser(row){
   const user = String(row?.usuarioPeia??'').trim().toUpperCase();
@@ -1135,7 +1222,7 @@ function recordPeiaHistorySnapshot(rows,savedAt,fileName){
   peiaHistory.sort((a,b)=>String(a.date).localeCompare(String(b.date)));
 }
 
-let peiaHistoryRole = 'Ambos';
+var peiaHistoryRole = 'Administrativo';
 function renderPeiaHistory(){
   const host = document.getElementById('peia-history-content');
   if(!host) return;
@@ -1368,6 +1455,7 @@ const FILTER_NONE = '__CAPTA_FILTER_NONE__';
 function buildFilter(containerEl, key, label, values, state, onChange, options={}){
   state.filters[key] = state.filters[key] || new Set();
   state.searches = state.searches || {};
+  let optionQuery = '';
   const getValues = ()=>typeof values==='function' ? values() : values;
   const wrap = document.createElement('div');
   wrap.className = 'filter-field';
@@ -1376,33 +1464,46 @@ function buildFilter(containerEl, key, label, values, state, onChange, options={
   wrap.appendChild(btn);
   const panel = document.createElement('div');
   panel.className = 'filter-panel';
+  if(options.actionsFirst) panel.classList.add('actions-first');
   wrap.appendChild(panel);
+
+  function positionPanel(){
+    if(!options.portal || !panel.classList.contains('show')) return;
+    const rect = btn.getBoundingClientRect();
+    const panelWidth = panel.offsetWidth || (options.fixedRows ? 270 : 240);
+    const left = Math.max(10,Math.min(rect.left,window.innerWidth-panelWidth-10));
+    panel.style.left = `${left}px`;
+    panel.style.top = `${rect.bottom+6}px`;
+  }
 
   function renderBtn(){
     const selected = state.filters[key];
-    const query = String(state.searches[key]||'').trim();
+    const query = options.liveSearch ? String(state.searches[key]||'').trim() : '';
     const selectionText = selected.has(FILTER_NONE) ? '0 sel.' : (selected.size===0 ? 'Todos' : selected.size+' sel.');
     const queryText = query ? ` · “${escapeHtml(query.length>18?query.slice(0,18)+'…':query)}”` : '';
     btn.innerHTML = `<span class="lbl">${label}</span> ${selectionText}${queryText} ▾`;
   }
   function renderPanel(filterText){
     const currentValues = getValues();
-    const query = String(filterText??state.searches[key]??'');
+    const query = String(filterText??(options.liveSearch?state.searches[key]:'')??'');
+    optionQuery = query;
     const selected = state.filters[key];
     const allSelected = selected.size===0;
-    let html = '';
-    if(currentValues.length>12 || options.liveSearch) html += `<input class="search" placeholder="Escribe para filtrar..." value="${escapeHtml(query)}">`;
-    html += currentValues.map(v=>{
+    const actions = `<div class="fp-actions"><a data-act="all">Seleccionar todos</a><a data-act="none">Deseleccionar todos</a></div>`;
+    let html = options.actionsFirst ? actions : '';
+    if(currentValues.length>12 || options.liveSearch || options.showSearch) html += `<input class="search" placeholder="Escribe para buscar..." value="${escapeHtml(query)}">`;
+    html += '<div class="filter-options-list">' + currentValues.map(v=>{
       const checked = allSelected || selected.has(v) ? 'checked' : '';
       const visible = !query || v.toLowerCase().includes(query.toLowerCase());
       return `<label class="filter-opt" style="${visible?'':'display:none'}"><input type="checkbox" value="${escapeHtml(v)}" ${checked}> ${escapeHtml(v)}</label>`;
-    }).join('');
-    html += `<div class="fp-actions"><a data-act="all">Seleccionar todos</a><a data-act="none">Deseleccionar todos</a></div>`;
+    }).join('') + '</div>';
+    if(!options.actionsFirst) html += actions;
     panel.innerHTML = html;
     const search = panel.querySelector('.search');
     if(search){
       search.addEventListener('input', e=>{
         const text = e.target.value;
+        optionQuery = text;
         panel.querySelectorAll('.filter-opt').forEach(option=>{
           option.style.display = !text || option.textContent.toLowerCase().includes(text.toLowerCase()) ? '' : 'none';
         });
@@ -1434,16 +1535,41 @@ function buildFilter(containerEl, key, label, values, state, onChange, options={
     });
     const allA = panel.querySelector('[data-act="all"]');
     const noneA = panel.querySelector('[data-act="none"]');
-    if(allA) allA.addEventListener('click', ()=>{ state.filters[key].clear(); renderPanel(search?search.value:''); renderBtn(); onChange(); });
-    if(noneA) noneA.addEventListener('click', ()=>{ state.filters[key].clear(); state.filters[key].add(FILTER_NONE); renderPanel(search?search.value:''); renderBtn(); onChange(); });
+    if(allA) allA.addEventListener('click', (event)=>{
+      event.preventDefault();
+      event.stopPropagation();
+      state.filters[key].clear();
+      renderPanel(search?search.value:'');
+      panel.classList.add('show');
+      renderBtn();
+      onChange();
+    });
+    if(noneA) noneA.addEventListener('click', (event)=>{
+      event.preventDefault();
+      event.stopPropagation();
+      state.filters[key].clear();
+      state.filters[key].add(FILTER_NONE);
+      renderPanel(search?search.value:'');
+      panel.classList.add('show');
+      renderBtn();
+      onChange();
+    });
+    positionPanel();
   }
   btn.addEventListener('click', (e)=>{
     e.stopPropagation();
     document.querySelectorAll('.filter-panel.show').forEach(p=>{ if(p!==panel) p.classList.remove('show'); });
     panel.classList.toggle('show');
-    if(panel.classList.contains('show')) renderPanel(state.searches[key]||'');
+    if(panel.classList.contains('show')) renderPanel(options.liveSearch?(state.searches[key]||''):optionQuery);
   });
-  document.addEventListener('click', (e)=>{ if(!wrap.contains(e.target)) panel.classList.remove('show'); });
+  document.addEventListener('click', (e)=>{ if(!wrap.contains(e.target) && !panel.contains(e.target)) panel.classList.remove('show'); });
+  if(options.portal){
+    panel.classList.add('portal-filter-panel');
+    if(options.fixedRows) panel.classList.add('detail-filter-panel');
+    document.body.appendChild(panel);
+    window.addEventListener('resize',positionPanel);
+    document.addEventListener('scroll',positionPanel,true);
+  }
   renderBtn();
   containerEl.appendChild(wrap);
 }
@@ -1508,6 +1634,7 @@ async function parsePEIAWorkbook(wb){
 }
 
 function initPEIADashboard(rows, fileName, savedAt){
+  document.querySelectorAll('.peia-filter-portal').forEach(panel=>panel.remove());
   peiaState.data = rows;
   loadedDataMeta.peia = {fileName:fileName||'Base PEIA.xlsx',savedAt:savedAt||new Date().toISOString()};
   recordPeiaHistorySnapshot(rows,loadedDataMeta.peia.savedAt,loadedDataMeta.peia.fileName);
@@ -1522,20 +1649,23 @@ function initPEIADashboard(rows, fileName, savedAt){
 
   const hasMes = rows.some(r=>r.mes);
   let fields = [
-    ['direccion','Dirección'], ['zona','Zona'], ['zonaArea1','Zona / Des Área 1'],
-    ['depArea2','Dep Sucursal / Des Área 2'], ['puesto','Puesto'],
-    ['gerenteZona','Gerente de Zona'], ['hrbp','HRBP'], ['estatus','Estatus de avance']
+    ['direccion','Dirección'], ['zona','Zona DO'], ['zonaArea1','Área 1'],
+    ['depArea2','Área 2'], ['gerenteZona','Gerente de Zona'],
+    ['hrbp','HRBP'], ['estatus','Avance']
   ];
   if(hasMes) fields.push(['mes','Mes concluido']);
 
   body.innerHTML = `
     <div class="filters-bar" id="peia-filters">
-      <div class="role-toggle" id="peia-role-toggle">
-        <span class="role-toggle-lbl">Personal</span>
-        <button data-role="Administrativo" class="active">Administrativo</button>
-        <button data-role="Operativo">Operativo</button>
-        <button data-role="Ambos">Ambos</button>
+      <div class="peia-filter-role-row">
+        <div class="role-toggle" id="peia-role-toggle">
+          <span class="role-toggle-lbl">Personal</span>
+          <button data-role="Administrativo" class="active">Administrativo</button>
+          <button data-role="Operativo">Operativo</button>
+          <button data-role="Ambos">Ambos</button>
+        </div>
       </div>
+      <div class="peia-filter-controls-row" id="peia-filter-controls"></div>
     </div>
     <div class="peia-view-tabs" role="tablist" aria-label="Vistas de avance PEIA">
       <button type="button" class="active" data-peia-view="general" role="tab" aria-selected="true">Avance general</button>
@@ -1593,7 +1723,20 @@ function initPEIADashboard(rows, fileName, savedAt){
         </div>
         <span id="peia-table-count"></span>
       </div>
-      <div class="table-scroll"><table id="peia-detail-table">
+      <div class="table-scroll peia-detail-scroll"><table id="peia-detail-table" style="table-layout:fixed;width:2620px;min-width:2620px;max-width:2620px">
+        <colgroup>
+          <col class="peia-col-direccion">
+          <col class="peia-col-zona">
+          <col class="peia-col-dep">
+          <col class="peia-col-empleado">
+          <col class="peia-col-nombre">
+          <col class="peia-col-puesto">
+          <col class="peia-col-gerente">
+          <col class="peia-col-hrbp">
+          <col class="peia-col-estatus">
+          <col class="peia-col-avance">
+          <col class="peia-col-usuario">
+        </colgroup>
         <thead><tr>
           <th><button type="button" class="sort-header-btn" data-peia-sort="direccion">Dirección <span class="sort-icon">↕</span></button><div class="col-filter-slot" data-col="direccion"></div></th>
           <th><button type="button" class="sort-header-btn" data-peia-sort="zona">Zona <span class="sort-icon">↕</span></button><div class="col-filter-slot" data-col="zona"></div></th>
@@ -1636,12 +1779,13 @@ function initPEIADashboard(rows, fileName, savedAt){
       .filter(r=>rowPasses(r,peiaState.filters))
       .map(r=>colFilterFieldValue(r,col)));
     buildFilter(slot, col, '', vals, colFilterState, renderPEIA, {
-      liveSearch:true,
-      onSearch: col==='nombre' ? text=>{
-        const input=document.getElementById('peia-detail-name-search');
-        if(input && input.value!==text) input.value=text;
-      } : undefined
+      showSearch:true,
+      actionsFirst:true,
+      portal:true,
+      fixedRows:7
     });
+    const portal=document.body.lastElementChild;
+    if(portal && portal.classList.contains('portal-filter-panel')) portal.classList.add('peia-filter-portal');
     slot.classList.add('col-filter-built');
   });
 
@@ -1659,10 +1803,12 @@ function initPEIADashboard(rows, fileName, savedAt){
     renderPEIA();
   });
 
-  const filterBar = document.getElementById('peia-filters');
+  const filterControls = document.getElementById('peia-filter-controls');
   fields.forEach(([key,label])=>{
     const vals = uniq(rows.map(r=>norm(r[key])));
-    buildFilter(filterBar, key, label, vals, peiaState, renderPEIA);
+    buildFilter(filterControls, key, label, vals, peiaState, renderPEIA, {actionsFirst:true,portal:true});
+    const portal=document.body.lastElementChild;
+    if(portal && portal.classList.contains('portal-filter-panel')) portal.classList.add('peia-filter-portal');
   });
   const clearEl = document.createElement('div');
   clearEl.className='clear-filters';
@@ -1678,10 +1824,10 @@ function initPEIADashboard(rows, fileName, savedAt){
     renderPEIA();
     renderPEIAFilterButtons();
   });
-  filterBar.appendChild(clearEl);
+  filterControls.appendChild(clearEl);
 
   function renderPEIAFilterButtons(){
-    filterBar.querySelectorAll('.filter-field').forEach((wrap,i)=>{
+    filterControls.querySelectorAll('.filter-field').forEach((wrap,i)=>{
       const [key,label] = fields[i];
       const selected = peiaState.filters[key];
       const selectionText = selected.has(FILTER_NONE) ? '0 sel.' : (selected.size===0 ? 'Todos' : selected.size+' sel.');
